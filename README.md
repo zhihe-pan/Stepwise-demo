@@ -3,7 +3,7 @@
 一个完全独立的展示仓库，用 `Vite + React + Hash Router` 复刻 Stepwise 的核心前端体验；静态前端、本地 mock 与离线桩 API，默认部署到 GitHub Pages。
 
 - **仓库**：[zhihe-pan/Stepwise-demo](https://github.com/zhihe-pan/Stepwise-demo)
-- **线上预览**（推送 `main` 且 Pages 启用后）：[https://zhihe-pan.github.io/Stepwise-demo/](https://zhihe-pan.github.io/Stepwise-demo/)  
+- **线上预览**（推送 `main` 且 Pages 启用后）：[https://zhihe-pan.github.io/stepwise-demo/](https://zhihe-pan.github.io/stepwise-demo/)  
   首次请在仓库 **Settings → Pages** 将 **Build and deployment → Source** 设为 **GitHub Actions**。
 
 > **编辑器报错「无法读取 …/stepwise-showcase/tsconfig」**：说明当前仍打开了**旧目录名**。请 **文件 → 打开文件夹**，改为打开本机上的 **`stepwise-demo`** 仓库根目录（重命名前的 `stepwise-showcase` 已不存在）。
@@ -37,10 +37,10 @@ npm run lint
 `vite.config.ts` 已预留：
 
 ```ts
-base: process.env.BASE_PATH || "/Stepwise-demo/"
+base: process.env.BASE_PATH || "/stepwise-demo/"
 ```
 
-与 GitHub 仓库名 `Stepwise-demo` 对齐。若将来改名，请同步修改 `vite.config.ts` 默认值，或在 CI / 本地构建前设置环境变量 `BASE_PATH`（见 `.github/workflows/deploy.yml`）。
+与 GitHub Pages 实际访问路径 `/stepwise-demo/` 对齐。若将来仓库或 Pages 路径再改名，请同步修改 `vite.config.ts` 默认值，或在 CI / 本地构建前设置环境变量 `BASE_PATH`（见 `.github/workflows/deploy.yml`）。
 
 由于使用的是 `Hash Router`，刷新子页面不会出现 GitHub Pages 的 404 白屏问题。
 

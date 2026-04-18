@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # 与仓库名 Stepwise-demo 一致，避免默认 base 与 Pages 路径不一致
-      BASE_PATH: /Stepwise-demo/
+      BASE_PATH: /stepwise-demo/
       # 让仍基于 Node 20 的 composite actions 在 Node 24 上运行，减少弃用告警
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
