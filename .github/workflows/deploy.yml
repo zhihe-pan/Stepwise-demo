@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # 与仓库名 Stepwise-demo 一致，避免默认 base 与 Pages 路径不一致
+      BASE_PATH: /Stepwise-demo/
 
     steps:
       - name: Checkout
