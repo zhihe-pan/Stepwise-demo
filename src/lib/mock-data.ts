@@ -1,0 +1,152 @@
+export type { DiaryEntry, Goal, GoalMilestone, Task } from "@/lib/types"
+import type { DiaryEntry, Goal } from "@/lib/types"
+
+export const mockGoals: Goal[] = [
+  {
+    id: "1",
+    name: "半年内完成一次半程马拉松",
+    emoji: "🏃",
+    createdAt: "2026-03-15T10:00:00.000Z",
+    currentPhase: "打基础",
+    deadline: "2026-10-01",
+    progress: 15,
+    nextMilestone: "连续 4 周每周跑步 3 次",
+    nextMilestoneDate: "2026-04-20",
+    milestones: [
+      {
+        id: "m1-a",
+        title: "连续 4 周每周跑步 3 次",
+        targetDate: "2026-04-20",
+        achieved: false,
+      },
+      {
+        id: "m1-b",
+        title: "单次轻松跑完成 10 公里",
+        targetDate: "2026-06-01",
+        achieved: false,
+      },
+      {
+        id: "m1-c",
+        title: "完成一次 15 公里以上的长距离拉练",
+        targetDate: "2026-08-15",
+        achieved: false,
+      },
+    ],
+    tasks: [
+      {
+        id: "t1",
+        milestoneId: "m1-a",
+        title: "本周完成 3 次 30 分钟慢跑（可跑走结合）",
+        duration: 35,
+        spanDays: 2,
+        startDate: "2026-04-06",
+        criteria: "每次记录心率区间与跑后体感，注意补水与拉伸",
+        minimumVersion: "先完成 1 次 20 分钟轻松跑",
+        isEasyFirstStep: true,
+        completed: false,
+      },
+      {
+        id: "t2",
+        milestoneId: "m1-a",
+        title: "整理一份适合自己的跑前热身与跑后放松动作清单",
+        duration: 25,
+        spanDays: 1,
+        startDate: "2026-04-08",
+        criteria: "每个动作写清时长与要点，下次跑步按清单执行",
+        minimumVersion: "先写下 3 个必做热身动作",
+        isEasyFirstStep: false,
+        completed: false,
+      },
+      {
+        id: "t1b",
+        milestoneId: "m1-b",
+        title: "选一条家附近 5～8 公里的安全跑步路线并试跑一遍",
+        duration: 40,
+        spanDays: 3,
+        startDate: "2026-04-20",
+        criteria: "记录路况、红绿灯与补水点，体感舒适为主",
+        minimumVersion: "先步行或慢跑摸清路线",
+        isEasyFirstStep: true,
+        completed: false,
+      },
+    ],
+    executionLogs: [],
+  },
+  {
+    id: "2",
+    name: "完成 Side Project MVP",
+    emoji: "🚀",
+    createdAt: "2026-04-01T14:30:00.000Z",
+    currentPhase: "核心功能开发",
+    deadline: "2026-06-30",
+    progress: 35,
+    nextMilestone: "用户登录功能上线",
+    nextMilestoneDate: "2026-04-20",
+    milestones: [
+      {
+        id: "m2-a",
+        title: "用户登录功能上线",
+        targetDate: "2026-04-20",
+        achieved: false,
+      },
+      {
+        id: "m2-b",
+        title: "核心业务闭环可演示",
+        targetDate: "2026-05-30",
+        achieved: false,
+      },
+    ],
+    tasks: [
+      {
+        id: "t3",
+        milestoneId: "m2-a",
+        title: "完成用户认证模块的数据库设计",
+        duration: 30,
+        spanDays: 2,
+        startDate: "2026-04-07",
+        criteria: "设计用户表结构，包含基本信息和认证字段",
+        minimumVersion: "先画出 ER 图草稿",
+        isEasyFirstStep: true,
+        completed: false,
+      },
+    ],
+    executionLogs: [],
+  },
+]
+
+export const missedReasons = [
+  { id: "no-time", label: "没时间" },
+  { id: "too-hard", label: "太难" },
+  { id: "bad-state", label: "状态差" },
+  { id: "dont-know-how", label: "不知道怎么开始" },
+]
+
+export const mockDiaryEntries: DiaryEntry[] = [
+  {
+    id: "d1",
+    content: "今天慢跑 30 分钟，最后一公里有点喘，但膝盖没有不适。打算把跑鞋鞋带再调紧一点试试。",
+    images: [],
+    goalId: "1",
+    goalName: "半年内完成一次半程马拉松",
+    createdAt: "2026-04-05T14:30:00",
+    mood: "good",
+  },
+  {
+    id: "d2",
+    content: "Side Project 的数据库设计画好了！感觉思路清晰了很多，明天开始写代码。",
+    images: [],
+    goalId: "2",
+    goalName: "完成 Side Project MVP",
+    createdAt: "2026-04-04T20:15:00",
+    mood: "great",
+  },
+  {
+    id: "d3",
+    content: "下雨了没出门跑，在家做了拉伸和核心 20 分钟。不算完美，但至少没完全躺平。",
+    images: [],
+    goalId: "1",
+    goalName: "半年内完成一次半程马拉松",
+    createdAt: "2026-04-03T18:00:00",
+    mood: "neutral",
+  },
+]
