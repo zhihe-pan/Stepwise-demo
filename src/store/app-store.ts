@@ -76,7 +76,8 @@ type AppState = {
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
-  isAuthenticated: true,
+  // 演示站首次进入默认展示登录页
+  isAuthenticated: false,
   user: initialUser,
   goals: prepareGoals(mockGoals),
   diaryEntries: structuredClone(mockDiaryEntries),
